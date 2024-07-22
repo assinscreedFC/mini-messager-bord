@@ -18,8 +18,11 @@ function AddNewCard(){
                 : 
                 
                     <div className="bg-zinc-700/45 w-full min-h-svh fixed inset-0 flex justify-center items-center">
-                        <div className=" absolute right-3 top-3">X</div>
-                        <div className="bg-black/10 w-3/6 aspect-[16/8] rounded-md">
+                        
+                        <div className="bg-black/10 w-3/6 aspect-[16/8] rounded-md"><div className="  w-full flex justify-end p-4">
+                            <button onClick={()=>setdisplay(true)} className="bg-zinc-200 w-6 aspect-square rounded-md ring-2 ring-offset-2 ring-red-600 ring-offset-current"> X</button>
+                            
+                        </div>
                         <form className="w-full min-h-full flex justify-center items-center flex-col gap-3" >
                             <label htmlFor="title"  className="text-white">title:</label>
                             <input type="text" name="title" id="title" className="p-1 rounded-md"/>

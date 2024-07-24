@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 });
 
 // Route POST pour insérer des données dans la base de données
-app.post('/api', async (req, res) => {
+app.post('/', async (req, res) => {
   console.log(req.path, req.method);
   const { use, title, des } = req.body;
   console.log(req.body);

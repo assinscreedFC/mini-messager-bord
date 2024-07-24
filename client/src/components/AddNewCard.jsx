@@ -17,7 +17,7 @@ function AddNewCard() {
     const workout = { use: 'anis', title, des: des};
 
     try {
-      const res = await axios.post('/api', workout, {
+      const res = await axios.post('/', workout, {
         headers: {
           'Content-Type': 'application/json',
         },

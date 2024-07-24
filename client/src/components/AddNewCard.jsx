@@ -1,14 +1,19 @@
 import { useState } from "react";
 import axios from "axios";
 
+
+
 function AddNewCard() {
   const [display, setDisplay] = useState(true);
   const [title, setTitle] = useState("");
   const [des, setDesc] = useState("");
+  
 
   const sub = async (e) => {
     e.preventDefault();
-
+fetch('/api/msg')
+  .then(response => response.json())
+  .then(json => console.log(json))
     if (!title || !des) {
       
       return;
@@ -17,7 +22,7 @@ function AddNewCard() {
     const workout = { use: 'anis', title, des: des};
 
     try {
-      const res = await axios.post('/', workout, {
+      const res = await axios.post('/api/env', workout, {
         headers: {
           'Content-Type': 'application/json',
         },

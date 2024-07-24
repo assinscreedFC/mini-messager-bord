@@ -7,6 +7,7 @@ function AddNewCard() {
   const [display, setDisplay] = useState(true);
   const [title, setTitle] = useState("");
   const [des, setDesc] = useState("");
+  const [use,setUser]=useState("");
   
 
   const sub = async (e) => {
@@ -19,7 +20,7 @@ fetch('/api/msg')
       return;
     }
 
-    const workout = { use: 'anis', title, des: des};
+    const workout = { use, title, des};
 
     try {
       const res = await axios.post('/api/env', workout, {
@@ -32,6 +33,8 @@ fetch('/api/msg')
       
       setTitle('');
       setDesc('');
+      setUser("");
+      setDisplay(true);
     } catch (err) {
       console.error('Axios error:', err);
       
@@ -67,6 +70,17 @@ fetch('/api/msg')
               </button>
             </div>
             <form className="w-full min-h-full flex justify-center items-center flex-col gap-3" onSubmit={sub}>
+            <label htmlFor="title" className="text-white">
+                user:
+              </label>
+              <input
+                type="text"
+                name="user"
+                id="user"
+                className="p-1 rounded-md"
+                value={use}
+                onChange={(e) => setUser(e.target.value)}
+              />
               <label htmlFor="title" className="text-white">
                 Title:
               </label>
@@ -90,7 +104,7 @@ fetch('/api/msg')
                 onChange={(e) => setDesc(e.target.value)}
               />
               <button className="p-3 bg-white rounded-md ring-green-400 ring-offset-2 ring-offset-current ring-2"
-                 
+                   
               >
                 Submit
               </button>

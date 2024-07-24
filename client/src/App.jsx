@@ -17,9 +17,9 @@ function App() {
 
   return (
     <>
-    <div className='bg-black w-full h-svh flex flex-col p-4 items-center'>
+    <div className='bg-black w-full min-h-svh flex flex-col p-4 items-center'>
       <AddNewCard/>
-      <div className='flex justify-center items-center h-full '> 
+      <div className='flex justify-center items-center min-h-full '> 
       <Mesage/>
       </div>
        <Outlet/>

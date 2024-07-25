@@ -1,5 +1,6 @@
-// db.js
+// models/databaseClient.js
 const { Client } = require('pg');
+require('dotenv').config();
 
 const client = new Client({
   user: process.env.PGUSER,

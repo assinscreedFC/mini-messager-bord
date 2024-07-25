@@ -11,18 +11,20 @@ import {
   Outlet,
 } from "react-router-dom";
 import Mesage from './components/Mesage.jsx';
+import Footer from './components/Footer.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <div className='bg-black w-full min-h-svh flex flex-col p-4 items-center'>
+    <div className='bg-custom-gradient w-full min-h-svh flex flex-col p-4 items-center'>
       <AddNewCard/>
-      <div className='flex justify-center items-center min-h-full '> 
+      <div className='flex w-2/3  justify-center items-center min-h-full '> 
       <Mesage/>
       </div>
        <Outlet/>
+       <Footer/>
     </div>
      
     </>

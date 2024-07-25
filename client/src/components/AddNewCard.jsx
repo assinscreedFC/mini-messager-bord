@@ -53,14 +53,14 @@ fetch('/api/msg')
         <div>
           <button
             onClick={() => setDisplay(false)}
-            className="bg-zinc-200 p-4 rounded-sm ring-2 text-zinc-800 ring-green-400 ring-offset-2 ring-offset-current"
+            className="bg-zinc-300 p-4 rounded-sm ring-2 font-semibold ring-green-400 ring-offset-2 ring-offset-current"
           >
             Add New Card
           </button>
         </div>
       ) : (
-        <div className="bg-zinc-700/45 w-full min-h-svh fixed inset-0 flex justify-center items-center">
-          <div className="bg-black/10 w-3/6 aspect-[16/8] rounded-md">
+        <div className="bg-zinc-900/75 w-full min-h-svh fixed inset-0 flex justify-center items-center">
+          <div className="bg-black/50  w-3/6 aspect-[16/8] rounded-md">
             <div className="w-full flex justify-end p-4">
               <button
                 onClick={() => setDisplay(true)}
@@ -69,7 +69,7 @@ fetch('/api/msg')
                 X
               </button>
             </div>
-            <form className="w-full min-h-full flex justify-center items-center flex-col gap-3" onSubmit={sub}>
+            <form className="w-full min-h-full flex justify-center items-center  flex-col gap-3" onSubmit={sub}>
             <label htmlFor="title" className="text-white">
                 user:
               </label>
@@ -103,7 +103,7 @@ fetch('/api/msg')
                 value={des}
                 onChange={(e) => setDesc(e.target.value)}
               />
-              <button className="p-3 bg-white rounded-md ring-green-400 ring-offset-2 ring-offset-current ring-2"
+              <button className="p-4 my-9 bg-zinc-100 rounded-md ring-green-500 font-semibold text-zinc-950 text-lg ring-offset-2 ring-offset-current ring-2"
                    
               >
                 Submit

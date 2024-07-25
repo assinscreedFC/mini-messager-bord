@@ -19,7 +19,7 @@ useEffect(()=>{
 },[])
 return (
     <>
-        <div className="w-72 m-4 gap-2 flex flex-col">
+        <div className="w-full m-4 gap-2 flex flex-col">
             {tab.map((element) => {
                 // Format the date
                 let dateTimeString = element.created_at;
@@ -28,7 +28,7 @@ return (
                 let formattedDateTime = `${datePart} ${timePart}`;
 
                 return (
-                    <div key={element.id} className="p-4 rounded-sm bg-yellow-100">
+                    <div key={element.id} className="p-4 rounded-md bg-zinc-300 font-medium border-l-emerald-500 border-s-8">
                         <h1>User: {element.use}</h1>
                         <h2>Title: {element.title}</h2>
                         <h3>Description: {element.des}</h3>

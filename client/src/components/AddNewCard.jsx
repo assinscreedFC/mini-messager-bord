@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import axios from "axios";
 
 
 
-function AddNewCard() {
+function AddNewCard({tab,settab}) {
   const [display, setDisplay] = useState(true);
   const [title, setTitle] = useState("");
   const [des, setDesc] = useState("");
@@ -28,7 +28,9 @@ fetch('/api/msg')
           'Content-Type': 'application/json',
         },
       });
-
+      console.log(res);
+      const br=[...tab,res.data];
+      settab(br);
     
       
       setTitle('');

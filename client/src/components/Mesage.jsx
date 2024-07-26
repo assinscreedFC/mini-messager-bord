@@ -3,20 +3,8 @@ import { useEffect, useState } from "react"
 
 
 
-function Mesage(){
-    const [tab,settab]=useState([])
-useEffect(()=>{
-    const tqb=[];
-    fetch('/api/msg')
-  .then(response => response.json())
-  .then(json => {
-    console.log(json)
-        json.forEach(element => {
-            tqb.push(element)
-        });
-  })
-  .then(()=>settab(tqb))
-},[])
+function Mesage({tab,settab}){
+
 return (
     <>
         <div className="w-full m-4 gap-2 flex flex-col">
